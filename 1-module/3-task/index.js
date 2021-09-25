@@ -1,3 +1,4 @@
 function ucFirst(str) {
-  // ваш код...
+  let result = !str ? '' : str[0].toUpperCase() + str.slice(1);
+  return result;
 }
