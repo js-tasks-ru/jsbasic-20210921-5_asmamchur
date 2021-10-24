@@ -27,9 +27,9 @@ export default class Carousel {
             </button>
           </div>
         </div>`);
-        carousel.append(innerSlide);
+      carousel.append(innerSlide);
     }
-    
+
     const rightButton = carouselElem.querySelector('.carousel__arrow_right');
     const leftButton = carouselElem.querySelector('.carousel__arrow_left');
     const slideCount = slides.length;
@@ -47,7 +47,7 @@ export default class Carousel {
         leftButton.style.display = '';
       }
     });
-    
+
     leftButton.addEventListener('click', () => {
       const width = carousel.offsetWidth;
       count--;
@@ -62,18 +62,13 @@ export default class Carousel {
 
     carousel.addEventListener('click', (event) => {
       if (event.target.closest('.carousel__button').tagName === 'BUTTON') {
-          const customEvent = new CustomEvent('product-add', {
+        const customEvent = new CustomEvent('product-add', {
           detail: event.target.closest('[data-id]').dataset.id,
           bubbles: true
-        })
-        carouselElem.dispatchEvent(customEvent)
+        });
+        carouselElem.dispatchEvent(customEvent);
       }
-        
-    })
-
+    });
     this.elem = carouselElem;
-
   }
-
-
 }
