@@ -40,7 +40,7 @@ export default class RibbonMenu {
     ribbon.addEventListener('scroll', event => {
       if (ribbon.scrollWidth - ribbon.scrollLeft - ribbon.clientWidth < 1) {
         rightButton.classList.remove('ribbon__arrow_visible');
-      } else if (screenLeft < 0) {
+      } else if (ribbon.scrollLeft < 1) {
         leftButton.classList.remove('ribbon__arrow_visible');
       } else {
         leftButton.classList.add('ribbon__arrow_visible');
