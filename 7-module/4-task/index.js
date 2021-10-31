@@ -92,7 +92,7 @@ export default class StepSlider {
         }
       }
 
-      function onPointerUp(event) {
+      function onPointerUp() {
         elem.classList.add('slider_dragging');
         document.removeEventListener('pointermove', onPointerMove);
         const customEvent = new CustomEvent('slider-change', {
