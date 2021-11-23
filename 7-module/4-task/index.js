@@ -53,8 +53,10 @@ export default class StepSlider {
       });
       this.elem.dispatchEvent(customEvent);
     });
-
+    let sliderElem = this.elem.querySelector('.slider');
+    console.log(sliderElem);
     let thumb = this.elem.querySelector('.slider__thumb');
+    console.log(thumb);
     let progress = this.elem.querySelector('.slider__progress');
     thumb.ondragstart = () => false;
     let steps = this.steps;
